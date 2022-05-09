@@ -28,9 +28,9 @@ function getRndInteger(min, max) {
 /*----------
   MAIN 
 -----------*/
-let cpuNumbers = []; 
+const cpuNumbers = []; 
 
-while(cpuNumbers.length < 16){
+while(cpuNumbers.length < 5){  //16
     let randomNumber = getRndInteger(1,100);
     if(!cpuNumbers.includes(randomNumber)){
         cpuNumbers.push(randomNumber);
@@ -40,10 +40,19 @@ console.log(cpuNumbers);
 
 const userNumbersList = []
 let i = 0
-while(i < 5) {
+
+let bomb = false
+
+while(i < 5 && bomb == false){  //84
     i++ 
     const userNumbers = Number(prompt("Inserisci un numero da 1 a 100"));
-    if(userNumbers >= 1 && userNumbers <= 100){
+    if(userNumbers >= 1 && userNumbers <= 100 && !userNumbersList.includes(userNumbers)){
+        for (let j = 0; j < cpuNumbers.length; j++){
+            if(userNumbers === cpuNumbers[j]){
+                bomb = true
+                console.log("Hai perso!")
+            }
+        }
         userNumbersList.push(userNumbers)
     }
 }
