@@ -33,8 +33,20 @@ let cpuNumbers = [];
 while(cpuNumbers.length < 16){
     let randomNumber = getRndInteger(1,100);
     if(!cpuNumbers.includes(randomNumber)){
-        cpuNumbers.push(randomNumber)
+        cpuNumbers.push(randomNumber);
+    }
+}
+console.log(cpuNumbers);
+
+const userNumbersList = []
+let i = 0
+while(i < 5) {
+    i++ 
+    const userNumbers = Number(prompt("Inserisci un numero da 1 a 100"));
+    if(userNumbers >= 1 && userNumbers <= 100){
+        userNumbersList.push(userNumbers)
     }
 }
 
-console.log(cpuNumbers)
+console.log(userNumbersList);
+
