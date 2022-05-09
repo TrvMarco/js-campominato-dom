@@ -41,15 +41,15 @@ console.log(cpuNumbers);
 const userNumbersList = []
 let i = 0
 
-let bomb = false
+let brokenNumber = false
 
-while(i < 5 && bomb == false){  //84
+while(i < 5 && brokenNumber == false){  //84
     i++ 
     const userNumbers = Number(prompt("Inserisci un numero da 1 a 100"));
     if(userNumbers >= 1 && userNumbers <= 100 && !userNumbersList.includes(userNumbers)){
         for (let j = 0; j < cpuNumbers.length; j++){
             if(userNumbers === cpuNumbers[j]){
-                bomb = true
+                brokenNumber = true
                 console.log("Hai perso!")
             }
         }
