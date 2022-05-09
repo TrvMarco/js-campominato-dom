@@ -8,8 +8,8 @@ La partita termina quando il giocatore inserisce un numero “vietato” o raggi
 Al termine della partita il software deve comunicare il punteggio, cioè il numero di volte che l’utente ha inserito un numero consentito.
 */
 
-// 1. Creare funzione per generare numeri casuali da 1 a 100
-// 2. Eseguire il controllo che i numeri non siano duplicati 
+// 1. Creare funzione per generare numeri casuali da 1 a 100 --ok
+// 2. Eseguire il controllo che i numeri non siano duplicati  --ok
 // 3. Chiedo all'utente di inserire (100-16) volte un numero tra 1 e 100
 // 4. Controllo che i numeri inseriti dall'utente non si ripetono 
 // 5. SE il numero è nella lista generata dal programma termina la partita
@@ -30,9 +30,11 @@ function getRndInteger(min, max) {
 -----------*/
 let cpuNumbers = []; 
 
-for(i = 0; i < 16; i++){
+while(cpuNumbers.length < 16){
     let randomNumber = getRndInteger(1,100);
-    cpuNumbers.push(randomNumber)
+    if(!cpuNumbers.includes(randomNumber)){
+        cpuNumbers.push(randomNumber)
+    }
 }
 
 console.log(cpuNumbers)
