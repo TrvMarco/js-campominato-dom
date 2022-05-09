@@ -16,3 +16,23 @@ Al termine della partita il software deve comunicare il punteggio, cioè il nume
 //    ALTRIMENTI continuo a chiedere al giocatore di inserire altri numeri
 // LA PARTITA TERMINA QUANDO IL GIOCATORE METTE UN NUMERO SCELTO DALLA CPU O DAL MASSIMO DELLE VOLTE POSSIBILI PER INSERIRE I NUMERI
 // 6. Comunico il punteggio, ovvero il numero di volte che è stato inserito un numero consentito
+
+
+/*----------
+  FUNCTION 
+-----------*/
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+/*----------
+  MAIN 
+-----------*/
+let cpuNumbers = []; 
+
+for(i = 0; i < 16; i++){
+    let randomNumber = getRndInteger(1,100);
+    cpuNumbers.push(randomNumber)
+}
+
+console.log(cpuNumbers)
