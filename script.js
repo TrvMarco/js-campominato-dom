@@ -28,10 +28,23 @@ function getRndInteger(min, max) {
 /*----------
   MAIN 
 -----------*/
-const cpuNumbers = []; 
+let level;
+let totalNumbers;
+do{
+    level = Number(prompt("Scegliere difficolta: facile = 0 , medio = 1, difficile = 2."));
+}while(isNaN(level) || level < 0 || level > 2)
 
+if(level === 0){
+    totalNumbers = 100;
+}else if(level === 1){
+    totalNumbers = 80;
+}else{
+    totalNumbers = 50;
+}
+
+const cpuNumbers = []; 
 while(cpuNumbers.length < 16){  //16
-    let randomNumber = getRndInteger(1,100);
+    let randomNumber = getRndInteger(1,totalNumbers);
     if(!cpuNumbers.includes(randomNumber)){
         cpuNumbers.push(randomNumber);
     }
@@ -39,12 +52,8 @@ while(cpuNumbers.length < 16){  //16
 console.log(cpuNumbers);
 
 const userNumbersList = [];
-let i = 0;
-
 let brokenNumber = false;
-
-while(i < 5 && brokenNumber == false){  //84
-    i++ 
+while( userNumbersList.length < 5 && brokenNumber == false){  //84   
     let userNumbers;
     do {
         userNumbers = Number(prompt("Inserisci un numero da 1 a 100"));
@@ -61,7 +70,10 @@ while(i < 5 && brokenNumber == false){  //84
     }
 }
 
-console.log("Lista di numeri inserita:", userNumbersList)
+if(userNumbersList.length == 5){
+    console.log("HAI VINTO!!")
+}
+
 
 
 /* BONUS: (da fare solo se funziona tutto il resto)
@@ -69,20 +81,20 @@ all’inizio il software richiede anche una difficoltà all’utente che cambia 
 con difficoltà 0 => tra 1 e 100
 con difficoltà 1 => tra 1 e 80
 con difficoltà 2 => tra 1 e 50 */
-const difficult = prompt("Scegliere difficolta: facile, medio, difficile")
-let maxValue; 
-let difficultFunction; 
+// const difficult = prompt("Scegliere difficolta: facile, medio, difficile")
+// let maxValue; 
+// let difficultFunction; 
 
-if(difficult == "facile"){
-    difficultFunction = getRndInteger(1,100);
-    maxValue = 100;
-}else if( difficult == "medio"){
-    getRndInteger(1,80);
-    maxValue = 80;
-}else{
-    getRndInteger(1,50);
-    maxValue = 50;
-}
+// if(difficult == "facile"){
+//     difficultFunction = getRndInteger(1,100);
+//     maxValue = 100;
+// }else if( difficult == "medio"){
+//     getRndInteger(1,80);
+//     maxValue = 80;
+// }else{
+//     getRndInteger(1,50);
+//     maxValue = 50;
+// }
 
 
 
