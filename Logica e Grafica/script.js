@@ -49,12 +49,15 @@ playButton.addEventListener('click',
     console.log(totalNumbers)
     
     let x = 0
+    let number = 1
     while(x < totalNumbers){
         x++
         const container = document.querySelector(".container"); 
         const cellElement = document.createElement("div");
+        cellElement.innerHTML = number
         cellElement.classList.add("cell")
         container.append(cellElement)
+        number++
     }
  }
 );
