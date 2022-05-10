@@ -17,3 +17,50 @@ costante level con numberprompt da 0 a 2 dentro un do, con while per validare ch
 SE level === 0 cambia variabile numeri totali 
 ALTRIMENTI SE ===1 etc */ 
 
+/*----------
+  FUNCTION 
+-----------*/
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min) ) + min;
+}
+
+/*----------
+    MAIN 
+-----------*/
+const playButton = document.getElementById("play-button");
+
+playButton.addEventListener('click',
+    function(){   
+    const difficult = document.querySelector('#difficult')
+    console.log(difficult.value) 
+    let totalNumbers
+    
+    switch (difficult.value) {
+        case "easy":
+            totalNumbers = 100;
+            break;
+        case "medium":
+            totalNumbers = 80;
+            break;
+        case "hard":
+            totalNumbers = 50;    
+            break; 
+    }
+    console.log(totalNumbers)
+    
+    let x = 0
+    while(x < totalNumbers){
+        x++
+        const container = document.querySelector(".container"); 
+        const cellElement = document.createElement("div");
+        cellElement.classList.add("cell")
+        container.append(cellElement)
+    }
+ }
+);
+
+
+// const bombs = [];
+// do{
+
+// }while(bombs.length < 16)

@@ -6,15 +6,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-/*---------
-   COMMONS 
----------*/
-.container{
-    max-width: 1000px;
-    height: 1000px;
-    margin: auto;
-    background-color: aquamarine;
-}
 
 /*---------
    BUTTON
@@ -56,4 +47,34 @@ header{
 
 .header-right button{
     margin-left: 20px;
+}
+
+/*---------
+   MAIN 
+---------*/
+.container{
+    max-width: 1000px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cell{
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.green-cell{
+    background-color: rgb(54, 247, 54);
+}
+
+.red-cell{
+    background-color: rgb(255, 59, 59);
 }
