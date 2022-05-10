@@ -43,17 +43,18 @@ if(level === 0){
 }
 
 const cpuNumbers = []; 
-while(cpuNumbers.length < 16){  //16
+while(cpuNumbers.length < 16){  
     let randomNumber = getRndInteger(1,totalNumbers);
     if(!cpuNumbers.includes(randomNumber)){
         cpuNumbers.push(randomNumber);
     }
 }
 console.log(cpuNumbers);
+let possibilities = totalNumbers - 16
 
 const userNumbersList = [];
 let brokenNumber = false;
-while( userNumbersList.length < 5 && brokenNumber == false){  //84   
+while( userNumbersList.length < possibilities && brokenNumber == false){   
     let userNumbers;
     do {
         userNumbers = Number(prompt("Inserisci un numero da 1 a 100"));
@@ -70,31 +71,18 @@ while( userNumbersList.length < 5 && brokenNumber == false){  //84
     }
 }
 
-if(userNumbersList.length == 5){
+if(userNumbersList.length == possibilities){
     console.log("HAI VINTO!!")
 }
-
-
 
 /* BONUS: (da fare solo se funziona tutto il resto)
 all’inizio il software richiede anche una difficoltà all’utente che cambia il range di numeri casuali:
 con difficoltà 0 => tra 1 e 100
 con difficoltà 1 => tra 1 e 80
 con difficoltà 2 => tra 1 e 50 */
-// const difficult = prompt("Scegliere difficolta: facile, medio, difficile")
-// let maxValue; 
-// let difficultFunction; 
 
-// if(difficult == "facile"){
-//     difficultFunction = getRndInteger(1,100);
-//     maxValue = 100;
-// }else if( difficult == "medio"){
-//     getRndInteger(1,80);
-//     maxValue = 80;
-// }else{
-//     getRndInteger(1,50);
-//     maxValue = 50;
-// }
+
+
 
 
 
